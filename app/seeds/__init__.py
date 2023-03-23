@@ -1,5 +1,7 @@
 from flask.cli import AppGroup
 from .users import seed_users, undo_users
+from .videos import seed_videos, undo_videos
+from .comments import seed_comments, undo_comments
 
 from app.models.db import db, environment, SCHEMA
 
@@ -15,9 +17,13 @@ def seed():
     if environment == 'production':
         # Before seeding, truncate all tables prefixed with schema name
         db.session.execute(f"TRUNCATE table {SCHEMA}.users RESTART IDENTITY CASCADE;")
+        db.session.execute(f"TRUNCATE table {SCHEMA}.videos RESTART IDENTITY CASCADE;")
+        db.session.execute(f"TRUNCATE table {SCHEMA}.comments RESTART IDENTITY CASCADE;")
         # Add a truncate command here for every table that will be seeded.
         db.session.commit()
     seed_users()
+    seed_videos()
+    seed_comments()
     # Add other seed functions here
 
 
@@ -25,4 +31,6 @@ def seed():
 @seed_commands.command('undo')
 def undo():
     undo_users()
+    undo_videos()
+    undo_comments()
     # Add other undo functions here

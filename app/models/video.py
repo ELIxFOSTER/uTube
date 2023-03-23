@@ -8,12 +8,12 @@ class Video(db.Model):
         __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')))
     title = db.Column(db.String(100))
     description = db.Column(db.String(500))
     category = db.Column(db.String(50))
     url = db.Column(db.String(100))
     thumbnail_img = db.Column(db.String(100))
+    user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')))
     created_at = db.Column(db.DateTime)
     updated_at = db.Column(db.DateTime)
 
