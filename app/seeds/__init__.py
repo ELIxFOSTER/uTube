@@ -16,11 +16,10 @@ seed_commands = AppGroup('seed')
 def seed():
     if environment == 'production':
         # Before seeding, truncate all tables prefixed with schema name
-        db.session.execute(f"TRUNCATE table {SCHEMA}.users RESTART IDENTITY CASCADE;")
-        db.session.execute(f"TRUNCATE table {SCHEMA}.videos RESTART IDENTITY CASCADE;")
-        db.session.execute(f"TRUNCATE table {SCHEMA}.comments RESTART IDENTITY CASCADE;")
         # Add a truncate command here for every table that will be seeded.
-        db.session.commit()
+        undo_comments()
+        undo_videos()
+        undo_users()
     seed_users()
     seed_videos()
     seed_comments()
