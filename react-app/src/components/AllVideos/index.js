@@ -19,15 +19,17 @@ return (
     <>
     {videos.map((video) => {
         return (
-        <>
+        <div>
+            <NavLink to={`/video/${video.id}`}>
             <div>{video.title}</div>
             <div>{video.description}</div>
             <div>{video.category}</div>
-            <div>{video.url}</div>
+            {/* <div>{video.url}</div>
             <div>{video.thumbnail_img}</div>
             <div>{video.created_at}</div>
-            <div>{video.updated_at}</div>
-        </>
+            <div>{video.updated_at}</div> */}
+            </NavLink>
+        </div>
         )
     })}
     </>

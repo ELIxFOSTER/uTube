@@ -6,6 +6,7 @@ import LoginFormPage from "./components/LoginFormPage";
 import { authenticate } from "./store/session";
 import Navigation from "./components/Navigation";
 import AllVideos from "./components/AllVideos";
+import VideoDetails from "./components/VideoDetails";
 
 function App() {
   const dispatch = useDispatch();
@@ -19,14 +20,17 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <Route path="/login" >
+          <Route exact path="/login" >
             <LoginFormPage />
           </Route>
-          <Route path="/signup">
+          <Route exact path="/signup">
             <SignupFormPage />
           </Route>
-          <Route path='/'>
+          <Route exact path='/'>
             <AllVideos/>
+          </Route>
+          <Route exact path='/video/:videoId'>
+            <VideoDetails />
           </Route>
         </Switch>
       )}
