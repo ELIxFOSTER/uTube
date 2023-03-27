@@ -10,12 +10,12 @@ class User(db.Model, UserMixin):
         __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
-    firstName = db.Column(db.String(50))
-    lastName = db.Column(db.String(50))
-    username = db.Column(db.String(50))
-    email = db.Column(db.String(50))
-    profile_img = db.Column(db.String(100))
-    hashed_password = db.Column(db.String(100))
+    firstName = db.Column(db.String())
+    lastName = db.Column(db.String())
+    username = db.Column(db.String())
+    email = db.Column(db.String())
+    profile_img = db.Column(db.String())
+    hashed_password = db.Column(db.String())
     created_at = db.Column(db.DateTime)
     updated_at = db.Column(db.DateTime)
 
