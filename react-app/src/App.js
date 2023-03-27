@@ -7,6 +7,9 @@ import { authenticate } from "./store/session";
 import Navigation from "./components/Navigation";
 import AllVideos from "./components/AllVideos";
 import VideoDetails from "./components/VideoDetails";
+import VideoForm from "./components/VideoForm";
+import Channel from "./components/Channel";
+import VideoEdit from "./components/VideoEdit";
 
 function App() {
   const dispatch = useDispatch();
@@ -20,18 +23,35 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
+
           <Route exact path="/login" >
             <LoginFormPage />
           </Route>
+
           <Route exact path="/signup">
             <SignupFormPage />
           </Route>
+
           <Route exact path='/'>
             <AllVideos/>
           </Route>
+
           <Route exact path='/video/:videoId'>
             <VideoDetails />
           </Route>
+
+          <Route exact path='/create'>
+            <VideoForm />
+          </Route>
+
+          <Route exact path='/channel' >
+            <Channel />
+          </Route>
+
+          <Route exact path='/video/:videoId/edit' >
+            <VideoEdit />
+          </Route>
+
         </Switch>
       )}
     </>

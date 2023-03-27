@@ -15,6 +15,7 @@ useEffect(() => {
 }, [dispatch])
 
 if (!videos.length) return null
+
 return (
     <>
     {videos.map((video) => {

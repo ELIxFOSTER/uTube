@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 6a4dc55ff4db
+Revision ID: 818088504852
 Revises:
-Create Date: 2023-03-22 20:28:09.941594
+Create Date: 2023-03-26 23:18:25.412994
 
 """
 from alembic import op
@@ -14,7 +14,7 @@ SCHEMA = os.environ.get("SCHEMA")
 
 
 # revision identifiers, used by Alembic.
-revision = '6a4dc55ff4db'
+revision = '818088504852'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -29,11 +29,11 @@ def upgrade():
     sa.Column('username', sa.String(length=50), nullable=True),
     sa.Column('email', sa.String(length=50), nullable=True),
     sa.Column('profile_img', sa.String(length=100), nullable=True),
+    sa.Column('hashed_password', sa.String(length=100), nullable=True),
     sa.Column('created_at', sa.DateTime(), nullable=True),
     sa.Column('updated_at', sa.DateTime(), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
-
 
     if environment == "production":
         op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
@@ -41,21 +41,21 @@ def upgrade():
 
     op.create_table('videos',
     sa.Column('id', sa.Integer(), nullable=False),
-    sa.Column('user_id', sa.Integer(), nullable=True),
     sa.Column('title', sa.String(length=100), nullable=True),
     sa.Column('description', sa.String(length=500), nullable=True),
     sa.Column('category', sa.String(length=50), nullable=True),
     sa.Column('url', sa.String(length=100), nullable=True),
-    sa.Column('thumbnail_img', sa.String(length=100), nullable=True),
+    sa.Column('thumbnail', sa.String(length=100), nullable=True),
+    sa.Column('user_id', sa.Integer(), nullable=True),
     sa.Column('created_at', sa.DateTime(), nullable=True),
     sa.Column('updated_at', sa.DateTime(), nullable=True),
     sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
 
-
     if environment == "production":
         op.execute(f"ALTER TABLE videos SET SCHEMA {SCHEMA};")
+
 
     op.create_table('comments',
     sa.Column('id', sa.Integer(), nullable=False),

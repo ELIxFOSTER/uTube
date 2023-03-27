@@ -15,7 +15,7 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(50))
     email = db.Column(db.String(50))
     profile_img = db.Column(db.String(100))
-    password = db.Column(db.String(100))
+    hashed_password = db.Column(db.String(100))
     created_at = db.Column(db.DateTime)
     updated_at = db.Column(db.DateTime)
 

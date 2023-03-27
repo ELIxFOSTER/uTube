@@ -7,7 +7,7 @@ def seed_videos():
         description='SEN Tarik is the 1st one to get an ace in counter strike 2 beta. He shows his insane one tap skill and no one can stop him. POG ',
         category='Counter-Strike',
         url='https://www.youtube.com/watch?v=mvfMfuKymek',
-        thumbnail_img='https://i.pinimg.com/564x/29/d8/23/29d82377df2655df17b4fbab048675c8.jpg',
+        thumbnail='https://i.pinimg.com/564x/29/d8/23/29d82377df2655df17b4fbab048675c8.jpg',
         user_id=1
     )
 
@@ -16,7 +16,7 @@ def seed_videos():
         description='SEN Tarik is the 1st one to get an ace in counter strike 2 beta. He shows his insane one tap skill and no one can stop him. POG ',
         category='Counter-Strike',
         url='https://www.youtube.com/watch?v=mvfMfuKymek',
-        thumbnail_img='https://i.pinimg.com/564x/29/d8/23/29d82377df2655df17b4fbab048675c8.jpg',
+        thumbnail='https://i.pinimg.com/564x/29/d8/23/29d82377df2655df17b4fbab048675c8.jpg',
         user_id=1
     )
 
@@ -25,7 +25,7 @@ def seed_videos():
         description='SEN Tarik is the 1st one to get an ace in counter strike 2 beta. He shows his insane one tap skill and no one can stop him. POG ',
         category='Counter-Strike',
         url='https://www.youtube.com/watch?v=mvfMfuKymek',
-        thumbnail_img='https://i.pinimg.com/564x/29/d8/23/29d82377df2655df17b4fbab048675c8.jpg',
+        thumbnail='https://i.pinimg.com/564x/29/d8/23/29d82377df2655df17b4fbab048675c8.jpg',
         user_id=1
     )
 
@@ -34,7 +34,7 @@ def seed_videos():
         description='SEN Tarik is the 1st one to get an ace in counter strike 2 beta. He shows his insane one tap skill and no one can stop him. POG ',
         category='Counter-Strike',
         url='https://www.youtube.com/watch?v=mvfMfuKymek',
-        thumbnail_img='https://i.pinimg.com/564x/29/d8/23/29d82377df2655df17b4fbab048675c8.jpg',
+        thumbnail='https://i.pinimg.com/564x/29/d8/23/29d82377df2655df17b4fbab048675c8.jpg',
         user_id=1
     )
 
@@ -43,7 +43,7 @@ def seed_videos():
         description='SEN Tarik is the 1st one to get an ace in counter strike 2 beta. He shows his insane one tap skill and no one can stop him. POG ',
         category='Counter-Strike',
         url='https://www.youtube.com/watch?v=mvfMfuKymek',
-        thumbnail_img='https://i.pinimg.com/564x/29/d8/23/29d82377df2655df17b4fbab048675c8.jpg',
+        thumbnail='https://i.pinimg.com/564x/29/d8/23/29d82377df2655df17b4fbab048675c8.jpg',
         user_id=1
     )
 
@@ -52,7 +52,7 @@ def seed_videos():
         description='Official music video for The Weeknd “Die For You”, from Starboy available everywhere now: http://theweeknd.co/Starboy',
         category='Music',
         url='https://www.youtube.com/watch?v=uPD0QOGTmMI&list=OLAK5uy_lIh621OMo4dgezJVXJ1d_zVHeClb6RYRU&index=17',
-        thumbnail_img='https://i.pinimg.com/236x/07/38/7e/07387e74024f620b6a7cc76087585fe3.jpg',
+        thumbnail='https://i.pinimg.com/236x/07/38/7e/07387e74024f620b6a7cc76087585fe3.jpg',
         user_id=2
     )
 
@@ -61,7 +61,7 @@ def seed_videos():
         description='Official music video for The Weeknd “Die For You”, from Starboy available everywhere now: http://theweeknd.co/Starboy',
         category='Music',
         url='https://www.youtube.com/watch?v=uPD0QOGTmMI&list=OLAK5uy_lIh621OMo4dgezJVXJ1d_zVHeClb6RYRU&index=17',
-        thumbnail_img='https://i.pinimg.com/236x/07/38/7e/07387e74024f620b6a7cc76087585fe3.jpg',
+        thumbnail='https://i.pinimg.com/236x/07/38/7e/07387e74024f620b6a7cc76087585fe3.jpg',
         user_id=2
     )
 
@@ -70,7 +70,7 @@ def seed_videos():
         description='Official music video for The Weeknd “Die For You”, from Starboy available everywhere now: http://theweeknd.co/Starboy',
         category='Music',
         url='https://www.youtube.com/watch?v=uPD0QOGTmMI&list=OLAK5uy_lIh621OMo4dgezJVXJ1d_zVHeClb6RYRU&index=17',
-        thumbnail_img='https://i.pinimg.com/236x/07/38/7e/07387e74024f620b6a7cc76087585fe3.jpg',
+        thumbnail='https://i.pinimg.com/236x/07/38/7e/07387e74024f620b6a7cc76087585fe3.jpg',
         user_id=2
     )
 
@@ -79,7 +79,7 @@ def seed_videos():
         description='Official music video for The Weeknd “Die For You”, from Starboy available everywhere now: http://theweeknd.co/Starboy',
         category='Music',
         url='https://www.youtube.com/watch?v=uPD0QOGTmMI&list=OLAK5uy_lIh621OMo4dgezJVXJ1d_zVHeClb6RYRU&index=17',
-        thumbnail_img='https://i.pinimg.com/236x/07/38/7e/07387e74024f620b6a7cc76087585fe3.jpg',
+        thumbnail='https://i.pinimg.com/236x/07/38/7e/07387e74024f620b6a7cc76087585fe3.jpg',
         user_id=2
     )
 
@@ -88,7 +88,7 @@ def seed_videos():
         description='Official music video for The Weeknd “Die For You”, from Starboy available everywhere now: http://theweeknd.co/Starboy',
         category='Music',
         url='https://www.youtube.com/watch?v=uPD0QOGTmMI&list=OLAK5uy_lIh621OMo4dgezJVXJ1d_zVHeClb6RYRU&index=17',
-        thumbnail_img='https://i.pinimg.com/236x/07/38/7e/07387e74024f620b6a7cc76087585fe3.jpg',
+        thumbnail='https://i.pinimg.com/236x/07/38/7e/07387e74024f620b6a7cc76087585fe3.jpg',
         user_id=2
     )
 
@@ -97,7 +97,7 @@ def seed_videos():
         description='36 Times Aceu or Brandon Has Taken Over In Radiant Ranked Lobbies, Best Moments for Aceu. 36 Times He Has Shook the Entire Lobby With His Superior Knowledge In Movement and Quick Thinking Coming From Apex Legends. ',
         category='Valorant',
         url='https://www.youtube.com/watch?v=LZUB-lRXKBM',
-        thumbnail_img='https://i.pinimg.com/236x/bb/03/1b/bb031bdb63f0fde57debe688ce7d6338.jpg',
+        thumbnail='https://i.pinimg.com/236x/bb/03/1b/bb031bdb63f0fde57debe688ce7d6338.jpg',
         user_id=3
     )
 
@@ -106,7 +106,7 @@ def seed_videos():
         description='36 Times Aceu or Brandon Has Taken Over In Radiant Ranked Lobbies, Best Moments for Aceu. 36 Times He Has Shook the Entire Lobby With His Superior Knowledge In Movement and Quick Thinking Coming From Apex Legends. ',
         category='Valorant',
         url='https://www.youtube.com/watch?v=LZUB-lRXKBM',
-        thumbnail_img='https://i.pinimg.com/236x/bb/03/1b/bb031bdb63f0fde57debe688ce7d6338.jpg',
+        thumbnail='https://i.pinimg.com/236x/bb/03/1b/bb031bdb63f0fde57debe688ce7d6338.jpg',
         user_id=3
     )
 
@@ -115,7 +115,7 @@ def seed_videos():
         description='36 Times Aceu or Brandon Has Taken Over In Radiant Ranked Lobbies, Best Moments for Aceu. 36 Times He Has Shook the Entire Lobby With His Superior Knowledge In Movement and Quick Thinking Coming From Apex Legends. ',
         category='Valorant',
         url='https://www.youtube.com/watch?v=LZUB-lRXKBM',
-        thumbnail_img='https://i.pinimg.com/236x/bb/03/1b/bb031bdb63f0fde57debe688ce7d6338.jpg',
+        thumbnail='https://i.pinimg.com/236x/bb/03/1b/bb031bdb63f0fde57debe688ce7d6338.jpg',
         user_id=3
     )
 
@@ -124,7 +124,7 @@ def seed_videos():
         description='36 Times Aceu or Brandon Has Taken Over In Radiant Ranked Lobbies, Best Moments for Aceu. 36 Times He Has Shook the Entire Lobby With His Superior Knowledge In Movement and Quick Thinking Coming From Apex Legends. ',
         category='Valorant',
         url='https://www.youtube.com/watch?v=LZUB-lRXKBM',
-        thumbnail_img='https://i.pinimg.com/236x/bb/03/1b/bb031bdb63f0fde57debe688ce7d6338.jpg',
+        thumbnail='https://i.pinimg.com/236x/bb/03/1b/bb031bdb63f0fde57debe688ce7d6338.jpg',
         user_id=3
     )
 
@@ -133,7 +133,7 @@ def seed_videos():
         description='36 Times Aceu or Brandon Has Taken Over In Radiant Ranked Lobbies, Best Moments for Aceu. 36 Times He Has Shook the Entire Lobby With His Superior Knowledge In Movement and Quick Thinking Coming From Apex Legends. ',
         category='Valorant',
         url='https://www.youtube.com/watch?v=LZUB-lRXKBM',
-        thumbnail_img='https://i.pinimg.com/236x/bb/03/1b/bb031bdb63f0fde57debe688ce7d6338.jpg',
+        thumbnail='https://i.pinimg.com/236x/bb/03/1b/bb031bdb63f0fde57debe688ce7d6338.jpg',
         user_id=3
     )
 

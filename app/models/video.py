@@ -12,7 +12,7 @@ class Video(db.Model):
     description = db.Column(db.String(500))
     category = db.Column(db.String(50))
     url = db.Column(db.String(100))
-    thumbnail_img = db.Column(db.String(100))
+    thumbnail = db.Column(db.String(100))
     user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')))
     created_at = db.Column(db.DateTime)
     updated_at = db.Column(db.DateTime)
@@ -28,7 +28,7 @@ class Video(db.Model):
             'description': self.description,
             'category': self.category,
             'url': self.url,
-            'thumbnail_img': self.thumbnail_img,
+            'thumbnail': self.thumbnail,
             'created_at': self.created_at,
             'updated_at': self.updated_at
         }
