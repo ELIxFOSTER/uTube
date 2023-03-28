@@ -10,7 +10,8 @@ function Navigation({ isLoaded }){
 	return (
 		<ul>
 			<li>
-				<NavLink exact to="/">Home</NavLink>
+				<NavLink exact to="/"
+				style={{ textDecoration: 'none', color: 'inherit'}}>Home</NavLink>
 			</li>
 			{isLoaded && (
 				<>
@@ -18,7 +19,8 @@ function Navigation({ isLoaded }){
 					<ProfileButton user={sessionUser} />
 				</li>
 				<li>
-					<NavLink to='/create'>
+					<NavLink to='/create'
+					style={{ textDecoration: 'none', color: 'inherit'}}>
 						Create
 					</NavLink>
 				</li>

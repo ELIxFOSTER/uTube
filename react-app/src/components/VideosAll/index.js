@@ -33,7 +33,8 @@ export default function VideosAll() {
           );
         }
         return (
-          <NavLink to={`/video/${video.id}`}>
+          <NavLink to={`/video/${video.id}`}
+          style={{ textDecoration: 'none', color: 'inherit'}}>
             <div className="video-card">
               <div>
                 <img id="thumbnail-img" src={video.thumbnail}></img>

@@ -35,7 +35,9 @@ export default function Channel() {
         {currentUserVideos.map((video) => {
             return (
                 <>
-                <NavLink to={`/video/${video.id}/edit`} >
+                <NavLink to={`/video/${video.id}/edit`}
+                style={{ textDecoration: 'none', color: 'inherit'}}
+                >
                 <div>
                     <div>{video.title}</div>
                     <div onClick={(e) => handleClick(video.id, e)} >Delete</div>
