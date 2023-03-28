@@ -8,9 +8,9 @@ class Video(db.Model):
         __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String())
-    description = db.Column(db.String())
-    category = db.Column(db.String())
+    title = db.Column(db.String(60))
+    description = db.Column(db.String(255))
+    category = db.Column(db.String(60))
     url = db.Column(db.String())
     thumbnail = db.Column(db.String())
     user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')))

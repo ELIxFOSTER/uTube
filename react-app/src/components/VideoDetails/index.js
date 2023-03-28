@@ -466,7 +466,7 @@ export default function VideoDetails() {
             ) : (
               <>
                 <div>{comment.comment_text}</div>
-                {comment.user_id === sessionUser.id && (
+                {comment.user_id === sessionUser?.id && (
                   <div>
                     <button onClick={() => setShowMenu(comment.id)}>
                       <i className="fa-solid fa-ellipsis-vertical"></i>

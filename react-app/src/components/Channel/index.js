@@ -26,6 +26,10 @@ export default function Channel() {
         <div>Please login to view channel</div>
     )
 
+    if (!currentUserVideos.length) return (
+        <div>No videos to edit or delete</div>
+    )
+
     return (
         <>
         {currentUserVideos.map((video) => {
