@@ -11,6 +11,7 @@ export default function Channel() {
     const dispatch = useDispatch()
     const videoSelector = useSelector((state) => state.videos)
     const currentUserVideos = Object.values(videoSelector.UserVideos)
+    const sessionUser = useSelector((state) => state.session.user)
 
     useEffect(() => {
         dispatch(getCurrentUserVideos())
@@ -20,6 +21,10 @@ export default function Channel() {
         e.preventDefault()
         await dispatch(deleteVideoThunk(videoId))
     }
+
+    if (!sessionUser) return (
+        <div>Please login to view channel</div>
+    )
 
     return (
         <>

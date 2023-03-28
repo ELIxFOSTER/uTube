@@ -4,12 +4,19 @@ const LOAD_CURRENTUSER_VIDEOS = "videos/LOAD_CURRENTUSER_VIDEOS";
 const CREATE_VIDEO = "videos/CREATE_VIDEO";
 const EDIT_VIDEO = "videos/EDIT_VIDEO";
 const DELETE_VIDEO = "videos/DELETE_VIDEO";
+const CLEAR_VIDEO ='videos/CLEAR_VIDEO'
 
 const normalizer = (data) => {
   const normalData = {};
   data.forEach((element) => (normalData[element.id] = element));
   return normalData;
 };
+
+export const clearVideo = () => {
+    return {
+        type: CLEAR_VIDEO
+    }
+}
 
 const loadVideos = (allVideos) => {
   return {
@@ -159,6 +166,10 @@ const videos = (state = initialState, action) => {
     case EDIT_VIDEO: {
         const newState = {...state, UserVideos: {...state.UserVideos}}
         newState.UserVideos[action.video.id] = action.video
+        return newState
+    }
+    case CLEAR_VIDEO: {
+        newState.VideoDetails = {}
         return newState
     }
     default:

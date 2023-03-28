@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
 from app.models import Video, db
-from .aws_helpers import upload_file_to_s3, get_unique_filename
+from .aws_helpers import upload_url_file_to_s3, upload_thumbnail_file_to_s3, get_unique_filename
 from flask_login import current_user, login_required
 from app.forms import VideoForm
 
@@ -55,21 +55,28 @@ def create_video():
     if form.validate_on_submit():
 
         url = form.data['url']
+        thumbnail = form.data['thumbnail']
 
         url.filename = get_unique_filename(url.filename)
+        url.filename = get_unique_filename(thumbnail.filename)
 
-        upload = upload_file_to_s3(url)
+        url_upload = upload_url_file_to_s3(url)
+        thumbnail_upload = upload_thumbnail_file_to_s3(thumbnail)
 
-        if "url" not in upload:
-            return { 'errors': 'File failed to upload' }
+
+        if "url" not in url_upload:
+            return { 'errors': 'video failed to upload' }
+
+        if 'thumbnail' not in thumbnail_upload:
+            return { 'errors': 'thumbnail failed to upload'}
 
 
         video = Video(
             title=form.data['title'],
             description=form.data['description'],
             category=form.data['category'],
-            url = upload['url'],
-            thumbnail = form.data['thumbnail'],
+            url = url_upload['url'],
+            thumbnail = thumbnail_upload['thumbnail'],
             user_id = form.data['user_id']
         )
 

@@ -21,6 +21,14 @@ function LoginFormModal() {
     }
   };
 
+  const demoUser = async (e) => {
+    e.preventDefault();
+    const password = "password";
+    const credential = "demo@aa.io";
+    const response = await dispatch(login(credential, password));
+    closeModal()
+  };
+
   return (
     <>
       <h1>Log In</h1>
@@ -49,6 +57,8 @@ function LoginFormModal() {
           />
         </label>
         <button type="submit">Log In</button>
+        <div>OR</div>
+        <button id='demo-user-submit-button' onClick={demoUser}>Demo User</button>
       </form>
     </>
   );

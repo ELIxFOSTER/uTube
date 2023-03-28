@@ -15,7 +15,7 @@ export default function VideoForm() {
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
     const [category, setCategory] = useState('')
-    const [userId, setUserId] = useState(sessionUser.id)
+    const [userId, setUserId] = useState(sessionUser?.id)
     const [thumbnail, setThumbnail] = useState('')
     const [url, setUrl] = useState('')
     // const [urlLoading, setUrlLoading] = useState(false)
@@ -49,6 +49,10 @@ export default function VideoForm() {
             history.push('/')
         }
     }
+
+    if (!sessionUser) return (
+        <div>Please login or signup to create!</div>
+    )
 
 
 return (
@@ -86,11 +90,8 @@ return (
             />
              <input
                 name='thumbnail'
-                type='text'
-                value={thumbnail}
-                onChange={(e) => setThumbnail(e.target.value)}
-                placeholder='thumbnail'
-                required
+                type='file'
+                onChange={(e) => setThumbnail(e.target.files[0])}
             />
             <input type="hidden" name="user_id" value={userId} />
             <button type='submit'>Create</button>

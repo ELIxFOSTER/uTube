@@ -1,0 +1,38 @@
+.all-videos-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    gap: 10px;
+}
+
+#thumbnail-img {
+    width: 360px;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+#profile-pic-video {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+}
+
+.video-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.sub-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 100px;
+}
+
+.video-details-container{
+    /* border: 2px solid red; */
+    width: 280px
+}

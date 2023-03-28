@@ -1,12 +1,13 @@
 """empty message
 
-Revision ID: 818088504852
+Revision ID: ac93f3b759dd
 Revises:
-Create Date: 2023-03-26 23:18:25.412994
+Create Date: 2023-03-27 16:05:40.470035
 
 """
 from alembic import op
 import sqlalchemy as sa
+
 
 import os
 environment = os.getenv("FLASK_ENV")
@@ -14,7 +15,7 @@ SCHEMA = os.environ.get("SCHEMA")
 
 
 # revision identifiers, used by Alembic.
-revision = '818088504852'
+revision = 'ac93f3b759dd'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -38,7 +39,6 @@ def upgrade():
     if environment == "production":
         op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
 
-
     op.create_table('videos',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('title', sa.String(), nullable=True),
@@ -55,7 +55,6 @@ def upgrade():
 
     if environment == "production":
         op.execute(f"ALTER TABLE videos SET SCHEMA {SCHEMA};")
-
 
     op.create_table('comments',
     sa.Column('id', sa.Integer(), nullable=False),
