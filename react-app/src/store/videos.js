@@ -95,14 +95,27 @@ export const createNewVideo = (videoData) => async (dispatch) => {
       body: videoData,
     });
 
+    // if (response.ok) {
+    //   console.log("----response went through----");
+    //   const newVideo = await response.json();
+    //   dispatch(createVideo(newVideo));
+    //   return newVideo;
+    // } else {
+    //   const errorData = await response.json();
+    //   return errorData;
+    // }
+
     if (response.ok) {
-      console.log("----response went through----");
-      const newVideo = await response.json();
-      dispatch(createVideo(newVideo));
-      return newVideo;
+      const data = await response.json();
+      dispatch(createNewVideo(data));
+      return data
+    } else if (response.status < 500) {
+      const data = await response.json();
+      if (data.errors) {
+        return data.errors;
+      }
     } else {
-      const errorData = await response.json();
-      return errorData;
+      return ["An error occurred. Please try again."];
     }
   };
 
@@ -117,13 +130,25 @@ export const editVideoThunk = (videoData, videoId) => async (dispatch) => {
     body: JSON.stringify(videoData),
   });
 
+  // if (response.ok) {
+  //   const data = await response.json();
+  //   dispatch(editVideo(data));
+  // } else {
+  //   const errorData = await response.json();
+  //   return errorData;
+  // }
+
   if (response.ok) {
-    const data = await response.json();
-    dispatch(editVideo(data));
-  } else {
-    const errorData = await response.json();
-    return errorData;
-  }
+		const data = await response.json();
+		dispatch(editVideo(data));
+	} else if (response.status < 500) {
+		const data = await response.json();
+		if (data.errors) {
+			return data.errors;
+		}
+	} else {
+		return ["An error occurred. Please try again."];
+	}
 };
 
 

@@ -59,6 +59,11 @@ return (
     <>
         <h1>Video Form</h1>
         <form onSubmit={handleSubmit} encType='multipart/form-data'>
+        <ul>
+					{errors.map((error, idx) => (
+						<li key={idx}>{error}</li>
+					))}
+				</ul>
             <input
                 name='url'
                 type='file'

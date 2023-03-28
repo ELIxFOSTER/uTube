@@ -437,6 +437,7 @@ export default function VideoDetails() {
               setComment(e.target.value);
             }}
             className="comment-input-field"
+            required
           />
           <button type="submit" className="comment-send-btn" name="Submit">            <i className="fas fa-paper-plane"></i>
           </button>

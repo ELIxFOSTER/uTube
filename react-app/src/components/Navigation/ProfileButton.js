@@ -53,7 +53,7 @@ function ProfileButton({ user }) {
             style={{textDecoration: "none", color: "inherit"}}
             onClick={closeMenu}
              >
-              <li className='channel-button'>Channel</li>
+              <button className='channel-button'>Channel</button>
             </NavLink>
             <li>
               <button onClick={handleLogout}>Log Out</button>

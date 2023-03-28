@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { editVideoThunk } from "../../store/videos";
 import { getVideoDetails } from "../../store/videos";
+import { clearVideo } from "../../store/videos";
 
 export default function VideoEdit() {
   const dispatch = useDispatch();
@@ -14,15 +15,21 @@ export default function VideoEdit() {
   const video = useSelector((state) => state.videos.VideoDetails);
   const history = useHistory();
 
-  const [title, setTitle] = useState(video.title);
-  const [category, setCategory] = useState(video.category);
-  const [description, setDescription] = useState(video.description);
+  const [title, setTitle] = useState('');
+  const [category, setCategory] = useState('');
+  const [description, setDescription] = useState('');
+  const [errors, setErrors] = useState([])
 //   const [thumbnail, setThumbnail] = useState(video.thumbnail);
   const url = video.url
+  console.log('video test', video.url)
 
   useEffect(() => {
+    dispatch(clearVideo)
     dispatch(getVideoDetails(videoId));
-  }, [dispatch, videoId]);
+    setTitle(video.title)
+    setCategory(video.category)
+    setDescription(video.description)
+  }, [dispatch, videoId, video.title, video.category, video.description]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -41,9 +48,14 @@ export default function VideoEdit() {
 
     console.log('videoData', videoData)
 
-    const newVideo = await dispatch(editVideoThunk(videoData, videoId));
-    if (newVideo) {
-      // history.push('/')
+    const data = await dispatch(editVideoThunk(videoData, videoId));
+    if (data) {
+      setErrors(data)
+    } else {
+      setTitle('')
+      setCategory('')
+      setDescription('')
+      history.push('/channel')
     }
   };
 
@@ -51,6 +63,11 @@ export default function VideoEdit() {
     <>
       <h1>Edit Video Route</h1>
       <form onSubmit={handleSubmit} encType='multipart/form-data'>
+      <ul>
+					{errors.map((error, idx) => (
+						<li key={idx}>{error}</li>
+					))}
+				</ul>
         <input
           type="text"
           value={title}

@@ -8,9 +8,9 @@ class VideoForm(FlaskForm):
     title = StringField('title', validators=[DataRequired(), Length(min=3, max=60)])
     description = TextAreaField('description', validators=[DataRequired(), Length(min=3, max=255)])
     category = StringField('category', validators=[DataRequired(), Length(min=3, max=60)])
-    url = FileField('url', validators=[FileAllowed(list(ALLOWED_EXTENSIONS))])
+    url = FileField('url', validators=[DataRequired(), FileAllowed(list(ALLOWED_EXTENSIONS))])
     thumbnail = FileField('thumbnail', validators=[
-        FileRequired(),
+        DataRequired(),
         FileAllowed(['jpg', 'jpeg', 'png', 'gif'], 'Only image files are allowed!')
     ])
     user_id = StringField('user_id', validators=[DataRequired()])
