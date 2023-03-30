@@ -83,7 +83,7 @@ def create_video():
         db.session.add(video)
         db.session.commit()
         return video.to_dict()
-    return {'errors': validation_errors_to_error_messages(form.errors)}, 403
+    return {'THESE ERRORS HITTIN': validation_errors_to_error_messages(form.errors)}, 403
 
 
 #* Video Delete *#

@@ -1,33 +1,161 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import ProfileButton from './ProfileButton';
-import './Navigation.css';
+import React, { useState, useRef, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+import ProfileButton from "./ProfileButton";
+import { logout } from "../../store/session";
+import OpenModalButton from "../OpenModalButton";
+import VideoCreateModal from "../VideoCreateModal";
+import "./Navigation.css";
 
-function Navigation({ isLoaded }){
-	const sessionUser = useSelector(state => state.session.user);
+import sheesh from "../../images/sheesh.jpeg";
+import LoginFormModal from "../LoginFormModal";
 
-	return (
-		<ul>
-			<li>
-				<NavLink exact to="/"
-				style={{ textDecoration: 'none', color: 'inherit'}}>Home</NavLink>
-			</li>
-			{isLoaded && (
-				<>
-				<li>
-					<ProfileButton user={sessionUser} />
-				</li>
-				<li>
-					<NavLink to='/create'
+
+function Navigation({ isLoaded }) {
+  const sessionUser = useSelector((state) => state.session.user);
+  const [showMenu, setShowMenu] = useState(false);
+  const [showMenuTwo, setShowMenuTwo] = useState(false)
+  const dispatch = useDispatch()
+  const ulRef = useRef();
+
+  const [showModal, setShowModal] = useState(false)
+
+    const handleClick = () => {
+    setShowModal(true);
+  };
+
+  const handleOtherClick = () => {
+    setShowMenuTwo(true)
+  }
+
+  const openMenuTwo = () => {
+    if (showMenuTwo) return
+    setShowMenuTwo(true)
+  }
+
+  const openMenu = () => {
+    if (showMenu) return;
+    setShowMenu(true);
+  };
+
+
+
+  useEffect(() => {
+    if (!showMenu) return;
+
+    const closeMenu = (e) => {
+      if (!ulRef.current?.contains(e.target)) {
+        setShowMenu(false);
+      }
+    };
+
+    document.addEventListener("click", closeMenu);
+
+    return () => document.removeEventListener("click", closeMenu);
+  }, [showMenu]);
+
+  useEffect(() => {
+    if (!showMenuTwo) return;
+
+    const closeMenu = (e) => {
+      if (!ulRef.current?.contains(e.target)) {
+        setShowMenuTwo(false);
+      }
+    };
+
+    document.addEventListener("click", closeMenuTwo);
+
+    return () => document.removeEventListener("click", closeMenuTwo);
+  }, [showMenuTwo]);
+
+  const handleLogout = (e) => {
+    e.preventDefault();
+    dispatch(logout());
+  };
+
+  const ulClassName = "profile-pic-dropdown" + (showMenu ? "" : " hidden");
+  const createClassName = "create-dropdown" + (showMenuTwo ? "" : " hidden");
+  const closeMenu = () => setShowMenu(false);
+  const closeMenuTwo = () => setShowMenuTwo(false)
+
+
+  return (
+    <div className="nav-contents-wrapper">
+      <div>
+        <NavLink
+          exact
+          to="/"
+          style={{ textDecoration: "none", color: "inherit" }}
+        >
+          <img id="logo" src={sheesh}></img>
+        </NavLink>
+      </div>
+      {isLoaded && (
+        <div className="right-side-content-container">
+          <div>
+            {/* <NavLink to='/create'
 					style={{ textDecoration: 'none', color: 'inherit'}}>
 						Create
-					</NavLink>
-				</li>
-				</>
-			)}
-		</ul>
-	);
+					</NavLink> */}
+            {sessionUser ? (
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center',
+              gap: '30px'
+              }}>
+                  <i className="fa-solid fa-video" onClick={openMenuTwo} ></i>
+                <div className={createClassName} ref={ulRef}>
+                <NavLink
+                  to="/channel"
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  <i></i>
+                  <OpenModalButton
+                  buttonText='Upload video'
+                  onItemClick={closeMenuTwo}
+                  modalComponent={<VideoCreateModal />}
+                  />
+                </NavLink>
+                </div>
+                  <img id='nav-profile-pic' src={sessionUser.profile_img} onClick={openMenu}></img>
+                  <div className={ulClassName} ref={ulRef}>
+                    <div className='profile-section-container'>
+                      <img id='dropdown-profile-pic' src={sessionUser.profile_img}></img>
+                      <div>
+                        <div>{sessionUser.firstName} {sessionUser.lastName}</div>
+                        <div>@{sessionUser.username}</div>
+                      </div>
+                    </div>
+                    <div className='options-container'>
+                      <div id='individual-box'>
+                      <i class="fa-regular fa-user"></i>
+                      <NavLink to='/channel'>
+                        <div style={{ fontSize: '14px' }}>Your channel</div>
+                      </NavLink>
+                      </div>
+                      <div id='individual-box'>
+                      <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        <div style={{ fontSize: '14px' }} onClick={handleLogout}>Sign out</div>
+                      </div>
+                      <div id='individual-box'>
+                      <i class="fa-regular fa-moon"></i>
+                        <div style={{ fontSize: '14px' }}>Appearance</div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            ) : (
+              <div>
+				<i className="fa-solid fa-ellipsis-vertical"></i>
+			  </div>
+            )}
+          </div>
+          <div>
+            <ProfileButton user={sessionUser} />
+          </div>
+        </div>
+      )}
+    </div>
+  );
 }
 
 export default Navigation;

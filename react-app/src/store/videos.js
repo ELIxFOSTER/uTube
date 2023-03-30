@@ -107,11 +107,13 @@ export const createNewVideo = (videoData) => async (dispatch) => {
 
     if (response.ok) {
       const data = await response.json();
-      dispatch(createNewVideo(data));
+      dispatch(createVideo(data));
+      console.log('---response good!---', data)
       return data
     } else if (response.status < 500) {
       const data = await response.json();
       if (data.errors) {
+        console.log('---RESPONSE HIT ERRORS', data)
         return data.errors;
       }
     } else {

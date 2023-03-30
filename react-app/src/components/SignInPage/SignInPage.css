@@ -1,0 +1,132 @@
+.sign-in-page-wrapper {
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid black; */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 98vh;
+}
+
+
+.sign-in-container {
+    display: flex;
+    flex-direction: column;
+    /* border-right: 2px solid rgb(210, 210, 210);
+    border-left: 2px solid rgb(210, 210, 210);
+    border-top: 1.5px solid rgb(210, 210, 210);
+    border-bottom: 1.5px solid rgb(210, 210, 210); */
+    box-shadow: 0px 0px 2px 0px rgb(106, 106, 106);
+    border: 0.5px solid rgb(172, 172, 172);
+    border-radius: 5px;
+    width: 450px;
+    height: 500px;
+    align-items: center;
+    gap: 50px
+}
+
+
+#demo-user-pic {
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    /* border: 2px solid purple; */
+}
+
+
+#gloog {
+    /* border: 2px solid black; */
+
+}
+
+
+.top-section-box {
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid green; */
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    gap: 15px
+
+}
+
+
+.bottom-section-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.credentials-box {
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid red; */
+}
+
+
+.names-box {
+    display: flex;
+    /* border: 2px solid darkgreen; */
+    gap: 5px
+}
+
+
+.user-container {
+    display: flex;
+    flex-direction: row;
+    /* border: 2px solid rgb(35, 35, 35); */
+    width: 380px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 35px;
+    padding-right: 35px;
+    gap: 10px;
+    align-items: center;
+    transition: background-color .15s ease;
+}
+
+.choose-account {
+    font-size: 25px;
+}
+
+.other-account-container {
+    display: flex;
+    flex-direction: row;
+    /* border: 2px solid rgb(35, 35, 35); */
+    width: 380px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 35px;
+    padding-right: 35px;
+    gap: 10px;
+    align-items: center;
+    transition: background-color .15s ease;
+}
+
+.other-account-container:hover {
+    cursor: pointer;
+    background-color: #dde4f7;
+    color-scheme: light;
+}
+
+.user-container:hover {
+    cursor: pointer;
+    background-color: #dde4f7;
+    color-scheme: light;
+}
+
+
+#other-user-icon {
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+.line {
+    border-bottom: 1px solid rgb(201, 201, 201);
+    color-scheme: light;
+    width: 375px;
+    display: flex;
+}

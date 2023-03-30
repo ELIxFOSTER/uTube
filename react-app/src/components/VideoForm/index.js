@@ -7,7 +7,7 @@ import { createNewVideo } from '../../store/videos'
 import { useHistory } from 'react-router-dom'
 
 
-export default function VideoForm() {
+export default function VideoFormOld() {
     const dispatch = useDispatch()
     const history = useHistory()
     const sessionUser = useSelector((state) => state.session.user)
