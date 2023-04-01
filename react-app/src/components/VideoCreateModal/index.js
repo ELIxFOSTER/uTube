@@ -23,7 +23,7 @@ export default function VideoCreateModal() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    if (currentStep === 1 && (url || fileSelected)) {
+    if (currentStep=== 1 && (url || fileSelected)) {
       setCurrentStep(2);
     } else if (currentStep === 2) {
       const formData = new FormData();

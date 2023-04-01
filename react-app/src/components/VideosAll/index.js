@@ -22,6 +22,8 @@ export default function VideosAll() {
 
   return (
     <div className="all-videos-wrapper">
+      <div className='sidebar-wrapper'>SIDEBAR CONTENT</div>
+      <div className='all-videos-section-container'>
       {videos.map((video) => {
         // const videoUser = allUsers?.users?.users?.find(
         //   (user) => user.id === video.user_id
@@ -56,6 +58,7 @@ export default function VideosAll() {
           </NavLink>
         );
       })}
+      </div>
     </div>
   );
 }
