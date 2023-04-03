@@ -218,3 +218,7 @@
     height: 40px;
     border-radius: 3px;
 }
+
+#stwo-button:hover {
+    cursor: pointer;
+}
