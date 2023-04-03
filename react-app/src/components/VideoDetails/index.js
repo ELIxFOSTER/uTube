@@ -282,7 +282,7 @@ export default function VideoDetails() {
         </div>
       </div>
       <div className='vd-sidebar-wrapper'>
-        {videos.sort(() => Math.random() - 0.5).map((video) => {
+        {videos.map((video) => {
           let videoUser = null;
           let videoDate = new Date(video.created_at)
           if (allUsers && allUsers.users && allUsers.users.users) {

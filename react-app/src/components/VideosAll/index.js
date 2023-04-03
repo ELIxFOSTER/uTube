@@ -116,7 +116,7 @@ export default function VideosAll() {
       </div>
 
       <div className="all-videos-section-container">
-        {videos.sort(() => Math.random() - 0.5).map((video) => {
+        {videos.map((video) => {
           // const videoUser = allUsers?.users?.users?.find(
           //   (user) => user.id === video.user_id
           // );
