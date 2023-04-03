@@ -1,4 +1,5 @@
 from .db import db, environment, SCHEMA, add_prefix_for_prod
+from datetime import datetime
 
 class Comment(db.Model):
     __tablename__ = 'comments'
@@ -10,7 +11,7 @@ class Comment(db.Model):
     video_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('videos.id')))
     user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')))
     comment_text = db.Column(db.String(255))
-    created_at = db.Column(db.DateTime)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
     updated_at = db.Column(db.DateTime)
 
     user = db.relationship('User', back_populates='comments')

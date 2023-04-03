@@ -109,7 +109,7 @@ export const createNewVideo = (videoData) => async (dispatch) => {
       const data = await response.json();
       dispatch(createVideo(data));
       console.log('---response good!---', data)
-      return data
+      // return data
     } else if (response.status < 500) {
       const data = await response.json();
       if (data.errors) {
@@ -126,10 +126,11 @@ export const editVideoThunk = (videoData, videoId) => async (dispatch) => {
     console.log('videoData in thunk', videoData)
   const response = await fetch(`/api/videos/${videoId}`, {
     method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(videoData),
+      headers: {
+    'Content-Type': 'application/json'
+  },
+
+    body: videoData,
   });
 
   // if (response.ok) {
@@ -143,9 +144,11 @@ export const editVideoThunk = (videoData, videoId) => async (dispatch) => {
   if (response.ok) {
 		const data = await response.json();
 		dispatch(editVideo(data));
+    console.log('---response good!---', data)
 	} else if (response.status < 500) {
 		const data = await response.json();
 		if (data.errors) {
+      console.log('---RESPONSE HIT ERRORS', data)
 			return data.errors;
 		}
 	} else {

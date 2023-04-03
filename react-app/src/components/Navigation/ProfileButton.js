@@ -48,7 +48,7 @@ function ProfileButton({ user }) {
     ) : (
         <NavLink to='/sign-in' style={{textDecoration: "none"}}>
       <div className='sign-in-button-container'>
-        <i class="fa-regular fa-circle-user" id='user-icon'></i>
+        <i className="fa-regular fa-circle-user" id='user-icon'></i>
       <div className='sign-in-text'>Sign in</div>
     </div>
         </NavLink>

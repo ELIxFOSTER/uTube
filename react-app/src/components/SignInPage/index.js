@@ -1,21 +1,28 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 import { signUp } from "../../store/session";
 import gloog from "../../images/gloog.jpeg";
 import { login } from "../../store/session";
 import demouser from "../../images/demouser.jpeg";
+import { getUserById } from "../../store/session";
+import { useEffect } from "react";
 import "./SignInPage.css";
 
 function SignInPage() {
   const dispatch = useDispatch();
   const history = useHistory()
   const sessionUser = useSelector((state) => state.session.user);
+  const demoUserState = useSelector((state) => state.session.VideoUser)
   const password = "password";
   const credential = "demo@aa.io";
   const firstName = "Demo";
   const lastName = "User";
+
+  useEffect((state) => {
+    dispatch(getUserById(1))
+  }, [dispatch])
 
   const demoUser = async (e) => {
     e.preventDefault();
@@ -36,7 +43,7 @@ function SignInPage() {
         </div>
         <div className="bottom-section-box">
           <div className="user-container" onClick={demoUser}>
-            <img id="demo-user-pic" src={demouser}></img>
+            <img id="demo-user-pic" src={demoUserState?.profile_img}></img>
             <div className="credentials-box">
               <div className="names-box">
                 <div style={{ fontSize: "14px" }}>{firstName}</div>
@@ -48,11 +55,19 @@ function SignInPage() {
             </div>
           </div>
             <div className='line'></div>
+            <NavLink to='/login' style={{ textDecoration: "none", color: "inherit" }}>
           <div className="other-account-container">
-            <i class="fa-regular fa-circle-user" id='other-user-icon' ></i>
-            <div className='user-other-account'>User another account</div>
+            <i className="fa-regular fa-circle-user" id='other-user-icon' ></i>
+            <div className='user-other-account'>Use another account</div>
           </div>
+            </NavLink>
           <div className='line'></div>
+          <NavLink to='/signup' style={{ textDecoration: "none", color: "inherit" }}>
+          <div className='ep-create-account-container'>
+          <i className="fa-solid fa-circle-plus" id='ep-create-account-icon'></i>
+          <div className='ep-create-text'>Create an account</div>
+          </div>
+          </NavLink>
         </div>
       </div>
       <div>bottom links</div>

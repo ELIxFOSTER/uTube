@@ -16,7 +16,7 @@ function CommDotMenu({
   };
 
   return (
-    <i class="fa-solid fa-ellipsis-vertical" onClick={onClick}></i>
+    <i className="fa-solid fa-ellipsis-vertical" onClick={onClick}></i>
   );
 }
 

@@ -1,6 +1,3 @@
-// enctype='multipart/form-data' on the form as an attribute
-
-
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { createNewVideo } from '../../store/videos'

@@ -6,6 +6,7 @@ import ProfileButton from "./ProfileButton";
 import { logout } from "../../store/session";
 import OpenModalButton from "../OpenModalButton";
 import VideoCreateModal from "../VideoCreateModal";
+import { useHistory } from "react-router-dom";
 import "./Navigation.css";
 
 import sheesh from "../../images/sheesh.jpeg";
@@ -13,6 +14,7 @@ import LoginFormModal from "../LoginFormModal";
 
 
 function Navigation({ isLoaded }) {
+  const history = useHistory()
   const sessionUser = useSelector((state) => state.session.user);
   const [showMenu, setShowMenu] = useState(false);
   const [showMenuTwo, setShowMenuTwo] = useState(false)
@@ -58,7 +60,7 @@ function Navigation({ isLoaded }) {
   useEffect(() => {
     if (!showMenuTwo) return;
 
-    const closeMenu = (e) => {
+    const closeMenuTwo = (e) => {
       if (!ulRef.current?.contains(e.target)) {
         setShowMenuTwo(false);
       }
@@ -72,6 +74,7 @@ function Navigation({ isLoaded }) {
   const handleLogout = (e) => {
     e.preventDefault();
     dispatch(logout());
+    history.push('/')
   };
 
   const ulClassName = "profile-pic-dropdown" + (showMenu ? "" : " hidden");
@@ -82,7 +85,10 @@ function Navigation({ isLoaded }) {
 
   return (
     <div className="nav-contents-wrapper">
-      <div>
+      <div className='nav-left-section'>
+        <div>
+        <i id='nav-menu-bars' className="fa-solid fa-bars"></i>
+        </div>
         <NavLink
           exact
           to="/"
@@ -102,17 +108,17 @@ function Navigation({ isLoaded }) {
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center',
               gap: '30px'
               }}>
-                  <i className="fa-solid fa-video" onClick={openMenuTwo} ></i>
+                  <i id='nav-create-video-icon'className="fa-solid fa-video" onClick={openMenuTwo} ></i>
                 <div className={createClassName} ref={ulRef}>
                 <NavLink
                   to="/channel"
                   style={{ textDecoration: "none", color: "inherit" }}
                 >
-                  <i></i>
                   <OpenModalButton
                   buttonText='Upload video'
                   onItemClick={closeMenuTwo}
                   modalComponent={<VideoCreateModal />}
+                  styleOption='upload-video-btn'
                   />
                 </NavLink>
                 </div>
@@ -127,25 +133,25 @@ function Navigation({ isLoaded }) {
                     </div>
                     <div className='options-container'>
                       <div id='individual-box'>
-                      <i class="fa-regular fa-user"></i>
-                      <NavLink to='/channel'>
+                      <i className="fa-regular fa-user"></i>
+                      <NavLink to='/channel' style={{ textDecoration: "none", color: "inherit" }} onClick={closeMenu}>
                         <div style={{ fontSize: '14px' }}>Your channel</div>
                       </NavLink>
                       </div>
                       <div id='individual-box'>
-                      <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                      <i className="fa-solid fa-arrow-right-from-bracket"></i>
                         <div style={{ fontSize: '14px' }} onClick={handleLogout}>Sign out</div>
                       </div>
-                      <div id='individual-box'>
+                      {/* <div id='individual-box'>
                       <i class="fa-regular fa-moon"></i>
                         <div style={{ fontSize: '14px' }}>Appearance</div>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
               </div>
             ) : (
               <div>
-				<i className="fa-solid fa-ellipsis-vertical"></i>
+				<i id='nav-dotted-menu' className="fa-solid fa-ellipsis-vertical"></i>
 			  </div>
             )}
           </div>

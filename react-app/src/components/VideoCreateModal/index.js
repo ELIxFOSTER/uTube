@@ -23,7 +23,7 @@ export default function VideoCreateModal() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    if (currentStep=== 1 && (url || fileSelected)) {
+    if (currentStep === 1 && (url || fileSelected)) {
       setCurrentStep(2);
     } else if (currentStep === 2) {
       const formData = new FormData();
@@ -37,8 +37,8 @@ export default function VideoCreateModal() {
 
       const data = await dispatch(createNewVideo(formData));
 
-      if (data.errors) {
-        setErrors(data.errors);
+      if (data) {
+        setErrors(data);
       } else {
         setTitle("");
         setDescription("");
@@ -65,11 +65,11 @@ export default function VideoCreateModal() {
       <form onSubmit={handleSubmit} encType="multipart/form-data">
         {currentStep === 1 && (
           <div className="upload-content-container">
-            <ul>
-              {errors.map((error, idx) => (
+            {errors.map((error, idx) => (
+              <ul>
                 <li key={idx}>{error}</li>
-              ))}
-            </ul>{" "}
+              </ul>
+            ))}
             <div
               onDrop={(e) => {
                 e.preventDefault();
@@ -123,57 +123,119 @@ export default function VideoCreateModal() {
                 style={{ display: "none" }}
               />
             </div>
+            <div
+              id="onetwo"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                padding: "10px",
+              }}
+            >
+              <div>
+                By submitting your videos to uTube, you acknowledge that you
+                agree to uTube's Terms of Service and Community Guidelines.
+              </div>
+              <div>
+                Please be sure not to violate others' copyright or privacy
+                rights.
+              </div>
+            </div>
           </div>
         )}
 
         {currentStep === 2 && (
-          <>
-            <input
-              name="title"
-              type="text"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-              placeholder="title"
-              required
-            />
-
-            <input
-              name="category"
-              type="text"
-              value={category}
-              onChange={(e) => setCategory(e.target.value)}
-              placeholder="category"
-              required
-            />
-
-            <input
-              name="description"
-              type="text"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-              placeholder="description"
-              required
-            />
-
-            <input
+          <div className="step-two-wrapper">
+            <div className="stwo-title-box">
+              <label style={{ fontSize: "19px", fontWeight: "600", borderBottom: '1px solid gray', padding: '10px' }}>
+                Details
+              </label>
+              <div>
+              {errors.map((error, idx) => (
+              <ul>
+                <li key={idx}>{error}</li>
+              </ul>
+            ))}
+              </div>
+              <input
+                name="title"
+                type="text"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                placeholder="Title"
+                required
+              />
+            </div>
+            <div className="stwo-category-box">
+              {/* <label>Category</label> */}
+              <input
+                name="category"
+                type="text"
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
+                placeholder="Category"
+                required
+              />
+            </div>
+            <div className="stwo-description-box">
+              {/* <label>Description</label> */}
+              <input
+                name="description"
+                type="text"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                placeholder="Description"
+                required
+              />
+            </div>
+            <div className="stwo-thumbnail-box">
+              <label style={{ fontSize: "17px", fontWeight: "600" }}>
+                Thumbnail
+              </label>
+              <div id="select-thumbnail-text">
+                Select or upload a picture that shows what's in your video. A
+                good thumbnail stands out and draws viewers' attention.
+              </div>
+              {/* <input
               name="thumbnail"
               type="file"
               onChange={(e) => setThumbnail(e.target.files[0])}
-            />
-
-            <button type="submit">Create</button>
-          </>
+            /> */}
+              <button
+                id="select-files-button-thumbnail"
+                onClick={() =>
+                  document.querySelector("input[name=thumbnail]").click()
+                }
+              >
+                <i
+                  className="fa-solid fa-file-arrow-up"
+                  id="upload-thumbnail-icon"
+                ></i>
+                <div id="upload-thumbnail-text">Upload thumbnail</div>
+              </button>
+              <input
+                name="thumbnail"
+                type="file"
+                // onChange={(e) => {
+                //   const file = e.target.files[0];
+                //   if (file.type === "video/mp4") {
+                //     setUrl(file);
+                //     setCurrentStep(2);
+                //   } else {
+                //     alert("Please select an .mp4 file");
+                //   }
+                // }}
+                onChange={(e) => setThumbnail(e.target.files[0])}
+                style={{ display: "none" }}
+              />
+            </div>
+            <div className="stwo-create-box">
+              <button id='stwo-button' type="submit">Create</button>
+            </div>
+          </div>
         )}
       </form>
-      <div>
-        <div>
-          By submitting your videos to uTube, you acknowledge that you agree to
-          uTube's Terms of Service and Community Guidelines.
-        </div>
-        <div>
-          Please be sure not to violate others' copyright or privacy rights.
-        </div>
-      </div>
     </div>
   );
 }

@@ -71,6 +71,7 @@ function SignupFormModal() {
                 name='profile_img'
                 type='file'
                 onChange={(e) => setProfileImg(e.target.files[0])}
+				required
             />
 				<label>
 					Password

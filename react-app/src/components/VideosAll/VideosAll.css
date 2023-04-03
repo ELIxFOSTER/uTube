@@ -10,12 +10,17 @@
     height: auto;
     flex-direction: row;
     gap: 10px;
+    max-height: calc(100vh - 80px); /* Adjust the height as per your requirements */
+    overflow-y: auto;
 }
 
 .sidebar-wrapper {
     display: flex;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     width: 290px;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
 }
 
 #thumbnail-img {
@@ -34,16 +39,175 @@
 .video-card {
     display: flex;
     flex-direction: column;
+    gap: 10px
 }
 
 .sub-container {
     display: flex;
     flex-direction: row;
     gap: 10px;
-    margin-bottom: 100px;
+    /* margin-bottom: 100px; */
+    margin-bottom: 50px;
 }
 
 .video-details-container{
     /* border: 2px solid red; */
-    width: 280px
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px
 }
+
+.video-details-two-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2px
+}
+
+#username-verified-box {
+    display: flex;
+    gap: 3px;
+    align-items: center;
+}
+
+#verified {
+    font-size: 13px;
+    color: rgb(98, 98, 98);
+}
+
+.sb-home-box {
+    display: flex;
+    /* border: 2px solid green; */
+    padding: 10px;
+    gap: 18px;
+    border-radius: 10px;
+    background-color: rgb(241, 240, 240);;
+    align-items: center;
+}
+
+.sb-home-box:hover {
+    cursor: pointer;
+    background-color: rgb(232, 232, 232);
+}
+
+.sb-videos-box {
+    display: flex;
+    /* border: 2px solid green; */
+    padding: 10px;
+    gap: 18px;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.sb-videos-box:hover {
+    cursor: pointer;
+    background-color: rgb(232, 232, 232);
+}
+
+#sb-line {
+    border-top: 1px solid rgb(223, 223, 223);
+}
+
+.sb-socials-box {
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid blue; */
+    gap: 5px;
+    border-top: 1px solid rgb(223, 223, 223);
+
+}
+
+.sb-socials-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+
+.sb-github-box {
+    display: flex;
+    /* border: 2px solid green; */
+    padding: 10px;
+    padding-left: 12px;
+    gap: 18px;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.sb-github-box:hover {
+    cursor: pointer;
+    background-color: rgb(232, 232, 232);
+}
+
+.sb-linkedin-box {
+    display: flex;
+    /* border: 2px solid green; */
+    padding: 10px;
+    gap: 18px;
+    border-radius: 10px;
+    align-items: center;
+    padding-left: 12px;
+}
+
+.sb-linkedin-box:hover {
+    cursor: pointer;
+    background-color: rgb(232, 232, 232);
+}
+
+.sb-twitter-box {
+    display: flex;
+    /* border: 2px solid green; */
+    padding: 10px;
+    gap: 18px;
+    border-radius: 10px;
+    align-items: center;
+    padding-left: 12px;
+}
+
+.sb-twitter-box:hover {
+    cursor: pointer;
+    background-color: rgb(232, 232, 232);
+}
+
+#db-card-username {
+    font-size: 14px;
+    color: rgb(83, 83, 83);
+}
+
+#db-card-date {
+    font-size: 14px;
+    color: rgb(83, 83, 83);
+}
+
+#db-card-title {
+    /* font-family: 'YouTube Sans Light', sans-serif;  */
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.sb-videos-box-dead {
+    display: flex;
+    /* border: 2px solid green; */
+    padding: 10px;
+    gap: 18px;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.sb-videos-box-dead:hover::after {
+    content: "Please sign in";
+    position: absolute;
+    /* top: 100%; */
+    top: 100px;
+    left: 100px;
+    /* left: 50%; */
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+
+  .sb-videos-box-dead:hover {
+    cursor: not-allowed;
+  }

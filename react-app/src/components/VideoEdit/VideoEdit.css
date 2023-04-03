@@ -1,0 +1,193 @@
+.ep-wrapper {
+    display: flex;
+    /* border: 2px solid black; */
+        border-top: 2px solid rgb(200, 200, 200);
+}
+
+.ep-sidebar-container {
+    display: flex;
+    /* border: 2px solid red; */
+    flex-direction: column;
+    width: 245px;
+    height: 91vh;
+    gap: 10px;
+    border-right: 1px solid rgb(200, 200, 200);
+}
+
+.ep-main-content-wrapper {
+    display: flex;
+    /* border: 2px solid green; */
+    flex-direction: column;
+}
+
+.ep-main-content-container {
+    display: flex;
+    /* border: 2px solid orange; */
+}
+
+.ep-main-sidebar-container {
+    display: flex;
+    /* border: 2px solid orange; */
+}
+
+.ep-actual-wrapper {
+    display:flex;
+    flex-direction: row;
+}
+
+.ep-video-details-box {
+    display:flex;
+    width: 810px;
+    /* border: 2px solid red; */
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.vd-form {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    gap: 10px
+}
+
+
+#ep-video-thumbnail {
+    width: 224px;
+    height: 127px;
+    object-fit: cover;
+    padding: 10px
+}
+
+#title {
+    width: 500px;
+    height: 50px;
+}
+
+/*
+input::placeholder {
+  color: gray;
+  font-size: 16px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  pointer-events: none;
+} */
+
+
+#vd-edit-title-input {
+    padding: 10px;
+    width: 790px;
+    height: 40px
+}
+
+#vd-edit-cat-input {
+    padding: 10px;
+    width: 790px;
+    height: 15px;
+}
+
+#vd-edit-desc-input {
+    padding: 10px;
+    width: 790px;
+    height: 120px;
+    flex-wrap: wrap;
+    overflow: auto;
+    /* box-sizing: border-box; */
+}
+
+
+.channel-container-arrow {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 20px;
+}
+
+.channel-container-arrow:hover {
+    cursor: pointer;
+    background-color: rgb(235, 235, 235);
+}
+
+
+.your-video-channel-box {
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid green; */
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    justify-self: center;
+    gap: 5px
+}
+
+
+#your-video-channel-text {
+    font-weight: 600;
+    font-size: 14px;
+
+}
+
+#your-video-channel-title {
+    color: rgb(120, 120, 120);
+    font-size: 13px;
+    font-weight: 100;
+}
+
+
+.channel-details-section {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    padding-left: 15px;
+    /* border: 2px solid orange; */
+    background-color: rgb(235, 235, 235);
+    border-left: 3px solid red;
+}
+
+/* .channel-details-section:hover {
+    background-color: rgb(215, 215, 215);
+} */
+
+#channel-sb-details-text {
+    color:rgb(230, 25, 25)
+}
+
+.ch-buttons {
+    display: flex;
+    width: 200px;
+    gap: 10px
+}
+
+
+#channel-sb-pencil-icon {
+    color:rgb(230, 25, 25)
+}
+
+
+#channel-save-btn {
+    border: none;
+    width: 65px;
+    background-color: rgb(25, 90, 220);
+    border-radius: 2px;
+    color: white;
+    height: 40px;
+}
+
+#channel-save-btn:hover {
+    cursor: pointer;
+}
+
+#channel-delete-btn {
+    border: none;
+    width: 65px;
+    background-color: rgb(220, 25, 25);
+    border-radius: 2px;
+    color: white;
+    height: 40px;
+}
+
+#channel-delete-btn:hover {
+    cursor: pointer;
+}

@@ -15,7 +15,7 @@
 #logo {
 width: 80px;
 height: 20px;
-margin-left: 50px;
+/* margin-left: 50px; */
 }
 
 .nav-contents-wrapper {
@@ -26,6 +26,13 @@ margin-left: 50px;
   margin-right: 15px;
   margin-bottom: 20px;
   align-items: center;
+}
+
+.nav-left-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px
 }
 
 
@@ -82,13 +89,15 @@ margin-left: 50px;
 
 .profile-pic-dropdown {
   position: absolute;
-  border: 2px solid black;
+  /* border: 2px solid black; */
+  border-radius: 16px;
+  box-shadow: 3px 2px 10px 4px rgb(209, 209, 209);
   width: 205px;
-  height: 260px;
+  height: 150px;
   background-color: white;
   /* display: flex; */
   right: 40px;
-  top: 50px;
+  top: 55px;
   align-items: center;
   flex-direction: column;
 }
@@ -129,10 +138,55 @@ margin-left: 50px;
   height: 25px;
   align-items: center;
   gap: 20px;
-  width: 179px;
+  width: 97%;
   padding: 5px;
 }
 
 #individual-box:hover {
+  background-color: rgb(220, 220, 220);
+}
+
+#individual-box:hover {
+  cursor: pointer;
+}
+
+.create-dropdown {
+  background-color: rgb(255, 255, 255);
+  width: 115px;
+  height: 50px;
+  justify-content: center;
+  /* display: flex; */
+  align-items: center;
+  /* display: flex; */
+  position: absolute;
+  top: 60px;
+  box-shadow: 3px 2px 10px 4px rgb(247, 247, 247);
+  border-radius: 8px;
+}
+
+
+#nav-dotted-menu:hover {
+  cursor: not-allowed;
+}
+
+#nav-menu-bars:hover {
+  cursor: not-allowed;
+}
+
+.upload-video-btn {
+  border: 0px;
+  width: 115px;
+  height: 30px;
+  background-color: white;
+  margin-top: 10px;
+}
+
+.upload-video-btn:hover {
+  background-color: rgb(220, 220, 220);
+  cursor: pointer;
+}
+
+
+#nav-create-video-icon:hover {
   cursor: pointer;
 }
