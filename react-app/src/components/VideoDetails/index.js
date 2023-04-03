@@ -81,13 +81,13 @@ export default function VideoDetails() {
   };
 
   const handleEdit = (comment) => {
-    setEditCommentId(comment.id);
+    setEditCommentId(comment?.id);
     setShowEdit(true);
-    setEditText(comment.comment_text);
+    setEditText(comment?.comment_text);
   };
 
   const handleDelete = async (comment) => {
-    const response = await dispatch(deleteComment(comment.id));
+    const response = await dispatch(deleteComment(comment?.id));
     if (response && response.errors) {
       setErrors(response.errors);
     }
@@ -100,10 +100,11 @@ export default function VideoDetails() {
     );
     if (response && response.errors) {
       setErrors(response.errors);
+    } else {
+      setShowEdit(false);
+      setEditText("");
+      setEditCommentId(null);
     }
-    setShowEdit(false);
-    setEditText("");
-    setEditCommentId(null);
   };
 
   const ulClassName = "comment-menu-dropdown" + (showMenu ? "" : " hidden");
@@ -219,17 +220,17 @@ export default function VideoDetails() {
         <div className="comment-section-container">
           {comments.length > 0 ? (
             comments.map((comment) => {
-              let commentDate = new Date(comment.created_at)
+              let commentDate = new Date(comment?.created_at)
               let commentUser = null;
               if (allUsers && allUsers.users && allUsers.users.users) {
                 commentUser = allUsers.users.users.find(
-                  (user) => user.id === comment.user_id
+                  (user) => user.id === comment?.user_id
                 );
               }
 
               return (
-                <div key={comment.id}>
-                  {editCommentId === comment.id ? (
+                <div key={comment?.id}>
+                  {editCommentId === comment?.id ? (
                     <form onSubmit={handleEditSubmit}>
                       <input
                         type="text"
@@ -249,15 +250,15 @@ export default function VideoDetails() {
                       <div className="cp-section-one">
                         <div className="cp-section-two">
                           <div className="cp-title-section">
-                            <div style={{ fontWeight: '600'}}>@{commentUser.username}</div>
+                            <div style={{ fontWeight: '600'}}>@{commentUser?.username}</div>
                             <div id='comment-timestamp'>{getPastTime(commentDate)}</div>
                           </div>
-                          {comment.user_id === sessionUser?.id && (
+                          {comment?.user_id === sessionUser?.id && (
                             <div>
-                              <button id='comment-drop-menu-button'onClick={() => setShowMenu(comment.id)}>
+                              <button id='comment-drop-menu-button'onClick={() => setShowMenu(comment?.id)}>
                                 <i className="fa-solid fa-ellipsis-vertical"></i>
                               </button>
-                              {showMenu === comment.id && (
+                              {showMenu === comment?.id && (
                                 <div className={ulClassName} ref={ulRef}>
                                   <div id='cm-edit-box' onClick={() => handleEdit(comment)}>
                                     <div><i className="fa-regular fa-pen-to-square"></i></div>
@@ -272,7 +273,7 @@ export default function VideoDetails() {
                             </div>
                           )}
                         </div>
-                        <div style={{ fontWeight: '400'}}>{comment.comment_text}</div>
+                        <div style={{ fontWeight: '400'}}>{comment?.comment_text}</div>
                       </div>
                     </div>
                   )}
