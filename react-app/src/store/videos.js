@@ -187,8 +187,7 @@ const videos = (state = initialState, action) => {
     case DELETE_VIDEO: {
       const newState = {
         ...state,
-        UserVideos: { ...state.UserVideos },
-        AllPins: {},
+        UserVideos: { ...state.UserVideos }, AllVideos: {}
       };
       delete newState.UserVideos[action.videoId];
       return newState;
