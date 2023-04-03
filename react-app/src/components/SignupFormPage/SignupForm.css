@@ -30,4 +30,11 @@
 #signup-page-button {
     color: white;
     background-color: blue;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#signup-page-button:hover {
+    cursor: pointer;
 }

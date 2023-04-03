@@ -178,32 +178,36 @@ export default function VideoDetails() {
           <div style={{ fontWeight: '600'}}>Comments</div>
         </div>
         <form onSubmit={handleCommentSubmit} encType="multipart/form-data">
-          <div className="comment-input-wrapper">
-            <div>
-              <img
-                id="comment-user-profile-image"
-                src={videoUser?.profile_img}
-              ></img>
-            </div>
-            <div className="comment-input-container">
-              <input
-                type="text"
-                placeholder="Add a comment"
-                value={comment_text}
-                onChange={(e) => {
-                  setComment(e.target.value);
-                }}
-                className="comment-input-field"
-                required
-              />
-              <div className='comment-send-btn-box'>
-              <button type="submit" className="comment-send-btn" name="Submit">
-                {/* {" "} */}
-                Comment
-              </button>
-              </div>
-            </div>
-          </div>
+          {sessionUser ? (
+                      <div className="comment-input-wrapper">
+                      <div>
+                        <img
+                          id="comment-user-profile-image"
+                          src={videoUser?.profile_img}
+                        ></img>
+                      </div>
+                      <div className="comment-input-container">
+                        <input
+                          type="text"
+                          placeholder="Add a comment"
+                          value={comment_text}
+                          onChange={(e) => {
+                            setComment(e.target.value);
+                          }}
+                          className="comment-input-field"
+                          required
+                        />
+                        <div className='comment-send-btn-box'>
+                        <button type="submit" className="comment-send-btn" name="Submit">
+                          {/* {" "} */}
+                          Comment
+                        </button>
+                        </div>
+                      </div>
+                    </div>
+          ) : (
+            <div></div>
+          )}
           {errors.length > 0 && (
             <ul>
               {errors.map((error, idx) => (

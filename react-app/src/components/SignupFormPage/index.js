@@ -9,6 +9,7 @@ function SignupFormPage() {
   const sessionUser = useSelector((state) => state.session.user);
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
+  const [profile_img, setProfileImg] = useState(null)
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState([]);
@@ -18,9 +19,18 @@ function SignupFormPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (password === confirmPassword) {
-        const data = await dispatch(signUp(username, email, password));
+        // const data = await dispatch(signUp(username, email, password));
+        const formData = new FormData()
+
+        formData.append('email', email)
+        formData.append('username', username)
+        formData.append('password', password)
+        formData.append('profile_img', profile_img)
+
+        const data = await dispatch(signUp(formData))
         if (data) {
           setErrors(data)
+          console.log(data)
         }
     } else {
         setErrors(['Confirm Password field must be the same as the Password field']);
@@ -31,7 +41,7 @@ function SignupFormPage() {
     <div className='signup-page-wrapper'>
       <div className='signup-page-container'>
       <h1>Create an account</h1>
-      <form onSubmit={handleSubmit} className='signup-page-form'>
+      <form onSubmit={handleSubmit} className='signup-page-form' encType="multipart/form-data">
         <ul>
           {errors.map((error, idx) => <li key={idx}>{error}</li>)}
         </ul>
@@ -70,6 +80,12 @@ function SignupFormPage() {
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
+          />
+          <input
+          type='file'
+          name='profile_img'
+          onChange={(e) => setProfileImg(e.target.files[0])}
+
           />
         <button type="submit" id='signup-page-button'>Sign Up</button>
       </form>

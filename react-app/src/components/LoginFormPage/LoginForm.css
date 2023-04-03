@@ -30,4 +30,12 @@
 #login-page-button {
     color: white;
     background-color: blue;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+#login-page-button:hover {
+    cursor: pointer;
 }
