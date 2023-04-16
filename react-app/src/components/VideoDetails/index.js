@@ -184,7 +184,7 @@ export default function VideoDetails() {
                       <div>
                         <img
                           id="comment-user-profile-image"
-                          src={videoUser?.profile_img}
+                          src={sessionUser?.profile_img}
                         ></img>
                       </div>
                       <div className="comment-input-container">

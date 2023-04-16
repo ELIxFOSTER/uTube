@@ -6,7 +6,7 @@ def seed_comments():
     comment1 = Comment(
         comment_text='This video was crazy',
         video_id=1,
-        user_id=2,
+        user_id=6,
         created_at=datetime.now(),
         updated_at=datetime.now()
     )
@@ -14,7 +14,7 @@ def seed_comments():
     comment2 = Comment(
         comment_text='Wow amazing',
         video_id=1,
-        user_id=3,
+        user_id=6,
         created_at=datetime.now(),
         updated_at=datetime.now()
     )
@@ -22,7 +22,7 @@ def seed_comments():
     comment3 = Comment(
         comment_text='Who edited this video?',
         video_id=1,
-        user_id=1,
+        user_id=6,
         created_at=datetime.now(),
         updated_at=datetime.now()
     )
@@ -30,7 +30,7 @@ def seed_comments():
     comment4 = Comment(
         comment_text='So trash',
         video_id=2,
-        user_id=1,
+        user_id=6,
         created_at=datetime.now(),
         updated_at=datetime.now()
     )
@@ -38,7 +38,7 @@ def seed_comments():
     comment5 = Comment(
         comment_text='I love you!!! PLEASE SEE MY COMMENT',
         video_id=2,
-        user_id=3,
+        user_id=6,
         created_at=datetime.now(),
         updated_at=datetime.now()
     )
@@ -46,7 +46,7 @@ def seed_comments():
     comment6 = Comment(
         comment_text='Im a hater, you suck!',
         video_id=2,
-        user_id=2,
+        user_id=6,
         created_at=datetime.now(),
         updated_at=datetime.now()
     )
@@ -54,7 +54,7 @@ def seed_comments():
     comment7 = Comment(
         comment_text='Pfffffff',
         video_id=4,
-        user_id=1,
+        user_id=6,
         created_at=datetime.now(),
         updated_at=datetime.now()
     )
@@ -62,7 +62,7 @@ def seed_comments():
     comment8 = Comment(
         comment_text='AYO?',
         video_id=15,
-        user_id=1,
+        user_id=6,
         created_at=datetime.now(),
         updated_at=datetime.now()
     )
@@ -70,7 +70,7 @@ def seed_comments():
     comment9 = Comment(
         comment_text='SHEEEEEEEEEESH',
         video_id=7,
-        user_id=2,
+        user_id=6,
         created_at=datetime.now(),
         updated_at=datetime.now()
     )
@@ -78,7 +78,7 @@ def seed_comments():
     comment10 = Comment(
         comment_text='lmfao',
         video_id=10,
-        user_id=2,
+        user_id=6,
         created_at=datetime.now(),
         updated_at=datetime.now()
     )
@@ -86,7 +86,7 @@ def seed_comments():
     comment11 = Comment(
         comment_text='Im a robot',
         video_id=6,
-        user_id=3,
+        user_id=6,
         created_at=datetime.now(),
         updated_at=datetime.now()
     )
@@ -94,7 +94,7 @@ def seed_comments():
     comment12 = Comment(
         comment_text='yooo',
         video_id=11,
-        user_id=3,
+        user_id=6,
         created_at=datetime.now(),
         updated_at=datetime.now()
     )
@@ -102,7 +102,7 @@ def seed_comments():
     comment13 = Comment(
         comment_text='Hi',
         video_id=11,
-        user_id=1,
+        user_id=6,
         created_at=datetime.now(),
         updated_at=datetime.now()
     )

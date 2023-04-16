@@ -10,6 +10,8 @@ function SignupFormPage() {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [profile_img, setProfileImg] = useState(null)
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState([]);
@@ -26,6 +28,8 @@ function SignupFormPage() {
         formData.append('username', username)
         formData.append('password', password)
         formData.append('profile_img', profile_img)
+        formData.append('firstName', firstName)
+        formData.append('lastName', lastName)
 
         const data = await dispatch(signUp(formData))
         if (data) {
@@ -45,6 +49,24 @@ function SignupFormPage() {
         <ul>
           {errors.map((error, idx) => <li key={idx}>{error}</li>)}
         </ul>
+        <label>
+          First Name
+          </label>
+          <input
+            type="text"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+            required
+          />
+          <label>
+          Last Name
+          </label>
+          <input
+            type="text"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+            required
+          />
         <label>
           Email
           </label>
@@ -85,7 +107,6 @@ function SignupFormPage() {
           type='file'
           name='profile_img'
           onChange={(e) => setProfileImg(e.target.files[0])}
-
           />
         <button type="submit" id='signup-page-button'>Sign Up</button>
       </form>

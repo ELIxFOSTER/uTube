@@ -70,7 +70,7 @@ function SignInPage() {
           </NavLink>
         </div>
       </div>
-      <div>bottom links</div>
+      {/* <div>bottom links</div> */}
     </div>
   );
 }

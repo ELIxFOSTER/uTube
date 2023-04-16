@@ -46,6 +46,7 @@ export default function VideoCreateModal() {
         setThumbnail(null);
         setUrl(null);
         closeModal();
+        history.push('/')
       }
     }
   };
