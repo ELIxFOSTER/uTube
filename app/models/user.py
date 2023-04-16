@@ -10,8 +10,8 @@ class User(db.Model, UserMixin):
         __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
-    firstName = db.Column(db.String(60))
-    lastName = db.Column(db.String(60))
+    firstName = db.Column(db.String())
+    lastName = db.Column(db.String())
     username = db.Column(db.String(25))
     email = db.Column(db.String(255))
     profile_img = db.Column(db.String())
