@@ -16,6 +16,7 @@ import LoginFormModal from "../LoginFormModal";
 import "./VideoDetails.css";
 import { getAllUsers } from "../../store/session";
 import { getUserById } from "../../store/session";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 export default function VideoDetails() {
   const dispatch = useDispatch();
@@ -28,6 +29,7 @@ export default function VideoDetails() {
   const allVideos = useSelector((state) => state.videos);
   const videos = Object.values(allVideos.AllVideos);
   const ulRef = useRef();
+  const history = useHistory()
 
   const [errors, setErrors] = useState([]);
   const [comment_text, setComment] = useState("");
@@ -148,6 +150,12 @@ export default function VideoDetails() {
   }
 
 
+  const playNext = () => {
+    history.push(`/video/${videos[videoDetails.id].id}`)
+    console.log('this', videos[videoDetails.id + 1].id)
+  }
+
+
   if (!Object.values(videoDetails).length) return null;
   // if (!Object.values(videoUser).length) return null
 
@@ -155,7 +163,7 @@ export default function VideoDetails() {
     <div className="video-details-wrapper">
       <div className="video-details-content-container">
         <div>
-        <video width="1280px" height="720px" autoPlay controls>
+        <video width="1280px" height="720px" autoPlay controls onEnded={playNext}>
           <source src={videoDetails?.url} />
         </video>
         </div>

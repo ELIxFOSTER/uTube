@@ -6,7 +6,7 @@ def seed_videos():
         title="Pharrell's Skincare Routine for a Youthful Look | GQ",
         description="Pharrell is a man who understands the importance of skincare.",
         category='Interview',
-        url='https://utube-bucket.s3.us-west-1.amazonaws.com/e60f23e3e2be40728a0b36a9f6e4e2d9.jpeg',
+        url='https://utube-bucket.s3.us-west-1.amazonaws.com/8ccbf386a6e1446ba492f72a2e9e04ad.jpeg',
         thumbnail="https://utube-bucket.s3.us-west-1.amazonaws.com/pharellthumbnail.jpeg",
         user_id=2
     )
