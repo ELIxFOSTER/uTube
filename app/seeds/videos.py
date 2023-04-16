@@ -4,7 +4,7 @@ from sqlalchemy.sql import text
 def seed_videos():
     video1 = Video(
         title="Pharrell's Skincare Routine for a Youthful Look | GQ",
-        description="Pharrell is a man who understands the importance of skincare. Your face is the expression of your personality, so you have to take care of it. There are three steps in Pharrell's skincare essentials: cleansing, exfoliating and moisturizing. Do these every day and your skin could look as youthful as his. ",
+        description="Pharrell is a man who understands the importance of skincare.",
         category='Interview',
         url='https://utube-bucket.s3.us-west-1.amazonaws.com/e60f23e3e2be40728a0b36a9f6e4e2d9.jpeg',
         thumbnail="https://utube-bucket.s3.us-west-1.amazonaws.com/pharellthumbnail.jpeg",
