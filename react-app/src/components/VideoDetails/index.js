@@ -303,7 +303,7 @@ export default function VideoDetails() {
               (user) => user.id === video.user_id
             );
           }
-          return (
+          return video.id !== videoDetails.id && (
             <NavLink to={`/video/${video.id}`} style={{ textDecoration: "none", color: "inherit" }}>
             <div className='vd-sidebar-card'>
               <div>
