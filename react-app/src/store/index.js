@@ -3,11 +3,13 @@ import thunk from 'redux-thunk';
 import session from './session'
 import videos from './videos'
 import comments from './comments';
+import searchReducer from './search';
 
 const rootReducer = combineReducers({
   session,
   videos,
-  comments
+  comments,
+  searchReducer
 });
 
 

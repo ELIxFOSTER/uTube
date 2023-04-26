@@ -8,6 +8,7 @@ import OpenModalButton from "../OpenModalButton";
 import VideoCreateModal from "../VideoCreateModal";
 import { useHistory } from "react-router-dom";
 import "./Navigation.css";
+import SearchBar from "./Searchbar";
 
 import sheesh from "../../images/sheesh.jpeg";
 import LoginFormModal from "../LoginFormModal";
@@ -96,6 +97,9 @@ function Navigation({ isLoaded }) {
         >
           <img id="logo" src={sheesh}></img>
         </NavLink>
+      </div>
+      <div>
+        <SearchBar />
       </div>
       {isLoaded && (
         <div className="right-side-content-container">
