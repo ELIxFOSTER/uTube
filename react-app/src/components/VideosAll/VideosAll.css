@@ -9,9 +9,10 @@
     width: 100%;
     height: auto;
     flex-direction: row;
-    gap: 10px;
+    gap: 15px;
     max-height: calc(100vh - 80px); /* Adjust the height as per your requirements */
     overflow-y: auto;
+    margin-right: 10px;
 }
 
 .sidebar-wrapper {
@@ -24,7 +25,7 @@
 }
 
 #thumbnail-img {
-    width: 344px;
+    width: 330px;
     height: 194px;
     object-fit: cover;
     border-radius: 12px;
