@@ -99,7 +99,7 @@ function Navigation({ isLoaded }) {
         </NavLink>
       </div>
       <div>
-        <SearchBar />
+        {/* <SearchBar /> */}
       </div>
       {isLoaded && (
         <div className="right-side-content-container">
