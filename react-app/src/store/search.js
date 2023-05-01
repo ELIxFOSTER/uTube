@@ -28,17 +28,3 @@ const searchReducer = (state = initialState, action) => {
 };
 
 export default searchReducer;
-
-// store.js
-
-// import { combineReducers, createStore, applyMiddleware } from "redux";
-// import thunk from "redux-thunk";
-// import searchReducer from "./search/reducer";
-
-// const rootReducer = combineReducers({
-//   search: searchReducer,
-// });
-
-// const store = createStore(rootReducer, applyMiddleware(thunk));
-
-// export default store;
