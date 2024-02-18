@@ -16,8 +16,8 @@ def search():
     videos = Video.query.filter(Video.title.ilike(f'%{search_query}%')).all()
 
     # Convert the results to a list of dictionaries
-    user_results = [{'username': user.username} for user in users]
-    video_results = [{'video_title': video.title, 'username': video.user.username} for video in videos]
+    user_results = [{'username': user.username, 'profile_img': user.profile_img} for user in users]
+    video_results = [{'video_title': video.title, 'username': video.user.username, 'thumbnail': video.thumbnail,} for video in videos]
 
     # Combine the results into a single response
     results = {
@@ -26,3 +26,25 @@ def search():
     }
 
     return jsonify(results)
+
+
+# Inside search_routes.py
+
+@search_routes.route('/suggestions', methods=['GET'])
+def search_suggestions():
+    partial_query = request.args.get('query', '')
+
+    # Perform a case-insensitive search for video titles and usernames
+    video_titles = Video.query.filter(Video.title.ilike(f'%{partial_query}%')).limit(5).all()
+    usernames = User.query.filter(User.username.ilike(f'%{partial_query}%')).limit(5).all()
+
+    # Extract relevant information for suggestions
+    video_suggestions = [{'title': video.title} for video in video_titles]
+    username_suggestions = [{'username': user.username} for user in usernames]
+
+    suggestions = {
+        'video_titles': video_suggestions,
+        'usernames': username_suggestions,
+    }
+
+    return jsonify(suggestions)
