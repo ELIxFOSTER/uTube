@@ -3,6 +3,14 @@ from sqlalchemy.sql import text
 
 def seed_videos():
     video1 = Video(
+        title="EPIC GRAND FINAL ! Sentinels vs Fnatic - HIGHLIGHTS | VCT Stage 2 Masters - Reykjavík",
+        description="VCT Stage 2 Masters - Reykjavík | sentinels vs fnatic ALL MAPS HIGHLIGHTS",
+        category='Valorant',
+        url='https://utube-bucket.s3.us-west-1.amazonaws.com/mastersGrandFinal.mp4',
+        thumbnail="https://utube-bucket.s3.us-west-1.amazonaws.com/stage2thumbnail.jpg",
+        user_id=8
+    )
+    video2 = Video(
         title="Pharrell's Skincare Routine for a Youthful Look | GQ",
         description="Pharrell is a man who understands the importance of skincare.",
         category='Interview',
@@ -10,8 +18,7 @@ def seed_videos():
         thumbnail="https://utube-bucket.s3.us-west-1.amazonaws.com/pharellthumbnail.jpeg",
         user_id=2
     )
-
-    video2 = Video(
+    video3 = Video(
         title="A$AP Rocky - L$D (Explicit - Official Video)",
         description='Official Video for ”L$D (Explicit)” by A$AP Rocky',
         category='Music',
@@ -20,7 +27,7 @@ def seed_videos():
         user_id=3
     )
 
-    video3 = Video(
+    video4 = Video(
         title='Juice WRLD - Robbery (Directed by Cole Bennett)',
         description='Lyrical Lemonade Presents',
         category='Music',
@@ -29,7 +36,7 @@ def seed_videos():
         user_id=3
     )
 
-    video4 = Video(
+    video5 = Video(
         title='Playboi Carti - wokeuplikethis* ft. Lil Uzi Vert (Official Video)',
         description='self titled * + very first * + carti season *',
         category='Music',
@@ -38,7 +45,7 @@ def seed_videos():
         user_id=3
     )
 
-    video5 = Video(
+    video6 = Video(
         title="Creepin' (Remix) (Official Video)",
         description='Music video by Metro Boomin, The Weeknd, 21 Savage, Diddy performing Creepin',
         category='Music',
@@ -47,7 +54,7 @@ def seed_videos():
         user_id=3
     )
 
-    video6 = Video(
+    video7 = Video(
         title='Post Malone - Congratulations ft. Quavo',
         description='Congratulations ft. Quavo (Official Video)',
         category='Music',
@@ -56,7 +63,7 @@ def seed_videos():
         user_id=3
     )
 
-    video7 = Video(
+    video8 = Video(
         title='Travis Scott - goosebumps ft. Kendrick Lamar',
         description='Official music video for The Weeknd “Die For You”, from Starboy available everywhere now: http://theweeknd.co/Starboy',
         category='Music',
@@ -65,7 +72,7 @@ def seed_videos():
         user_id=3
     )
 
-    video8 = Video(
+    video9 = Video(
         title='Lil Baby - Woah (Official Music Video)',
         description='www.qualitycontrolmusic.com',
         category='Music',
@@ -74,7 +81,7 @@ def seed_videos():
         user_id=3
     )
 
-    video9 = Video(
+    video10 = Video(
         title="BLACKPINK - 'Kill This Love' M/Vs",
         description='BLACKPINK - Kill This Love',
         category='Music',
@@ -83,7 +90,7 @@ def seed_videos():
         user_id=7
     )
 
-    video10 = Video(
+    video11 = Video(
         title="BLACKPINK - 'How You Like That' DANCE PERFORMANCE VIDEO",
         description='MORE INFO ABOUT DANCE COVER CONTEST',
         category='Music',
@@ -92,7 +99,7 @@ def seed_videos():
         user_id=7
     )
 
-    video11 = Video(
+    video12 = Video(
         title="BLACKPINK - '마지막처럼 (AS IF IT'S YOUR LAST)' M/V",
         description="BLACKPINK - 마지막처럼 (AS IF IT'S YOUR LAST)",
         category='Music',
@@ -101,7 +108,7 @@ def seed_videos():
         user_id=7
     )
 
-    video12 = Video(
+    video13 = Video(
         title='Ice Spice, Lil Tjay - Gangsta Boo (Music Video)',
         description='Fan-made video for Gangsta Boo by Ice Spice and Lil Tjay ',
         category='Music',
@@ -110,7 +117,7 @@ def seed_videos():
         user_id=3
     )
 
-    video13 = Video(
+    video14 = Video(
         title='99 Magic Fire Surge Pking',
         description='New surge spells came out with the dragon slayer 2 quest. So I went pure pking with level 99 magic and 99 strength, very overpowered! DMM pking also',
         category='Music',
@@ -119,7 +126,7 @@ def seed_videos():
         user_id=1
     )
 
-    video14 = Video(
+    video15 = Video(
         title='OSRS Pking Guide (In Depth) Tips/Tricks',
         description='Most highly requested video, hope it helps you out.',
         category='Runescape',
@@ -128,7 +135,7 @@ def seed_videos():
         user_id=1
     )
 
-    video15 = Video(
+    video16 = Video(
         title='Cloud9 vs FaZe at ELEAGUE Major 2018 Grand Finals Map 3',
         description='I do not take credit for the game play I post, uploaded VODs are for archiving and educational purposes, all credits go to the respective players.',
         category='Counter-Strike',
@@ -137,7 +144,7 @@ def seed_videos():
         user_id=1
     )
 
-    db.session.add_all([video1, video2, video3, video4, video5, video6, video7, video8, video9, video10, video11, video12, video13, video14, video15])
+    db.session.add_all([video1, video2, video3, video4, video5, video6, video7, video8, video9, video10, video11, video12, video13, video14, video15, video16])
     db.session.commit()
 
 
