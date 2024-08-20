@@ -7,8 +7,8 @@ def seed_videos():
         description="VCT Stage 2 Masters - Reykjavík | sentinels vs fnatic ALL MAPS HIGHLIGHTS",
         category='Valorant',
         url='https://utube-bucket.s3.us-west-1.amazonaws.com/mastersGrandFinal.mp4',
-        thumbnail="https://utube-bucket.s3.us-west-1.amazonaws.com/stage2thumbnail.jpeg",
-        user_id=7
+        thumbnail="https://utube-bucket.s3.us-west-1.amazonaws.com/newvalthumbnail.jpeg",
+        user_id=8
     )
     video2 = Video(
         title="Pharrell's Skincare Routine for a Youthful Look | GQ",
