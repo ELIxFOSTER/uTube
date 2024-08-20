@@ -19,7 +19,7 @@ def seed_users():
     random = User(
         firstName='random', lastName='user', profile_img='https://utube-bucket.s3.us-west-1.amazonaws.com/1f23ec195d0d479a8b79c85357d8718c.jpeg', username='random-user-3', email='randomuser3@aa.io', password='password')
     riot = User(
-        firstName='Riot', lastName='Games', profile_img='https://utube-bucket.s3.us-west-1.amazonaws.com/riotpfp.png', username='Riot Games', email='riotgames@aa.io', password='password')
+        firstName='Riot', lastName='Games', profile_img='https://utube-bucket.s3.us-west-1.amazonaws.com/riotpfp.jpeg', username='Riot Games', email='riotgames@aa.io', password='password')
 
     db.session.add(demo)
     db.session.add(gq)
@@ -27,8 +27,8 @@ def seed_users():
     db.session.add(shroud)
     db.session.add(tarik)
     db.session.add(random)
-    db.session.add(riot)
     db.session.add(bp)
+    db.session.add(riot)
     db.session.commit()
 
 
