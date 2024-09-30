@@ -105,7 +105,7 @@ export default function VideosAll() {
             <div style={{ fontWeight: '300', fontSize: '14px'}}>Linkedin</div>
           </div>
           </NavLink>
-          <NavLink to={{ pathname: "https://twitter.com/elixfinesse" }} style={{ textDecoration: "none", color: "inherit" }} target="_blank" rel="noreferrer">
+          <NavLink to={{ pathname: "https://twitter.com/elixfoster" }} style={{ textDecoration: "none", color: "inherit" }} target="_blank" rel="noreferrer">
           <div className='sb-twitter-box'>
             <div><i className="fa-brands fa-square-twitter" style={{ fontSize: '20px'}}></i></div>
             <div style={{ fontWeight: '300', fontSize: '14px'}}>Twitter</div>
