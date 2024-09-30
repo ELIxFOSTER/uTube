@@ -2,14 +2,6 @@ from app.models import db, Video, environment, SCHEMA
 from sqlalchemy.sql import text
 
 def seed_videos():
-    video1 = Video(
-        title="EPIC GRAND FINAL ! Sentinels vs Fnatic - HIGHLIGHTS | VCT Stage 2 Masters - Reykjavík",
-        description="VCT Stage 2 Masters - Reykjavík | sentinels vs fnatic ALL MAPS HIGHLIGHTS",
-        category='Valorant',
-        url='https://utube-bucket.s3.us-west-1.amazonaws.com/mastersGrandFinal.mp4',
-        thumbnail="https://utube-bucket.s3.us-west-1.amazonaws.com/newvalthumbnail.jpeg",
-        user_id=8
-    )
     video2 = Video(
         title="Best Duelist Player in the World!? - LEV Aspas [NA] # MatchMVP",
         description="Only MATCH MVP games at the highest rank!",
